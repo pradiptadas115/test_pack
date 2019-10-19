@@ -1,0 +1,14 @@
+---
+ref: dd_shieldx_azure_vm_provision
+name: DD Azure VM provision
+description: this is a testing pack
+keywords:
+  - azure
+  - arm
+  - stackstorm
+version: 0.1.0
+python_version: 
+  - "2"
+author: Kolkata StackStorm Team
+email: pradipta.das@nihilent.com
+
