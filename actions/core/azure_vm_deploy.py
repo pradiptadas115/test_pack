@@ -11,8 +11,8 @@ import os,sys,json,random
 class arm_template_provision(Action):
     
     
-    def __init__(self):
-        super(arm_template_provision, self).__init__()
+    def __init__(self,config):
+        super(arm_template_provision, self).__init__(config)
 
     def auth(self,client_id,resource_group, subscription_number, tanent_id, serect, region):
         self.vm_name = 'shield-x_POC_UM'+str(random.randint(1,1001))
