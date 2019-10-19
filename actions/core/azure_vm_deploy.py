@@ -33,7 +33,7 @@ class arm_template_provision(Action):
         self.resource_group_client.resource_groups.create_or_update(resource_group, resource_group_params)
         
     def get_template_path(self, existing_template_path):
-        file_path = os.path.dirname(os.path.realpath(__file__ ))
+        file_path = os.path.dirname(os.path.realpath(__file__))
         return file_path + "/templates/"+ existing_template_path
     
     def deploy_vm(self, existing_template_path):
