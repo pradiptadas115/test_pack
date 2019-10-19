@@ -34,7 +34,7 @@ class arm_template_provision(Action):
         
     def get_template_path(self, existing_template_path):
         file_path = os.path.dirname(os.path.realpath(__file__))
-        return file_path + "/templates/"+ existing_template_path
+        return file_path + "../templates/"+ existing_template_path
     
     def deploy_vm(self, existing_template_path):
         try:
