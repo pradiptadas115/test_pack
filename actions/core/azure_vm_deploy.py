@@ -46,18 +46,18 @@ class arm_template_provision(Action):
             # print(template,type(template))
             parameters  = template['parameters']
             
-            format_parameters = {k: {'value': v} for k, v in parameters.items()}    
-            print(format_parameters,type(format_parameters))
-            # deployment_properties = {
-            #     'mode': DeploymentMode.incremental,
-            #     'template': template,
-            #     'parameters': format_parameters
-            # }
+            format_parameters = {k: v['defaultValue'] for k, v in parameters.items()}    
+            # print(format_parameters,type(format_parameters))
+            deployment_properties = {
+                'mode': DeploymentMode.incremental,
+                'template': template,
+                'parameters': format_parameters
+            }
 
-            # deployment_async_operation = self.resource_group_client.deployments.create_or_update(self.resource_group,self.vm_name,deployment_properties)
-            # result = deployment_async_operation.status()
-            # deployment_async_operation.wait()
-            # return(True,result)
+            deployment_async_operation = self.resource_group_client.deployments.create_or_update(self.resource_group,self.vm_name,deployment_properties)
+            result = deployment_async_operation.status()
+            deployment_async_operation.wait()
+            return(True,result)
 
         except Exception as e:
             return(False,str(e)) 
