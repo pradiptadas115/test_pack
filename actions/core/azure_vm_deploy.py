@@ -55,8 +55,10 @@ class arm_template_provision(Action):
             }
 
             deployment_async_operation = self.resource_group_client.deployments.create_or_update(self.resource_group,self.vm_name,deployment_properties)
-            result = deployment_async_operation.status()
             deployment_async_operation.wait()
+            deployment_async_operation.wait()
+            result = deployment_async_operation.status()
+            
             return(True,result)
 
         except Exception as e:
