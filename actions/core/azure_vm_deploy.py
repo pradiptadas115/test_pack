@@ -17,7 +17,7 @@ class arm_template_provision(Action):
     def auth(self,client_id,resource_group, subscription_number, tanent_id, serect, region):
         self.vm_name = 'shield-x_POC_UM'+str(random.randint(1,1001))
         self.resource_group = resource_group
-        
+        self.location = region
         credentials = ServicePrincipalCredentials(
             client_id = client_id,
             secret = serect,
@@ -43,20 +43,21 @@ class arm_template_provision(Action):
             with open(template_path) as f:
                 template = json.load(f)
 
-            print(template,type(template))
+            # print(template,type(template))
             # parameters  = template['parameters']
-            # format_parameters = {k: {'value': v} for k, v in parameters.items()}    
+            parameters = {'vmName': self.vm_name, 'ubuntuOSVersion': '16.04.0-LTS', 'location': self.location, 'adminUsername':'admin','adminPasswordOrKey':'C1sc0@123','vmSize':'Basic_A0','authenticationType':'password'}
+            format_parameters = {k: {'value': v} for k, v in parameters.items()}    
             
-            # deployment_properties = {
-            #     'mode': DeploymentMode.incremental,
-            #     'template': template,
-            #     'parameters': format_parameters
-            # }
+            deployment_properties = {
+                'mode': DeploymentMode.incremental,
+                'template': template,
+                'parameters': format_parameters
+            }
 
-            # deployment_async_operation = self.resource_group_client.deployments.create_or_update(self.resource_group,self.vm_name,deployment_properties)
-            # result = deployment_async_operation.status()
-            # deployment_async_operation.wait()
-            # return(True,result)
+            deployment_async_operation = self.resource_group_client.deployments.create_or_update(self.resource_group,self.vm_name,deployment_properties)
+            result = deployment_async_operation.status()
+            deployment_async_operation.wait()
+            return(True,result)
 
         except Exception as e:
             return(False,str(e)) 
