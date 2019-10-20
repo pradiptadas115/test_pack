@@ -220,6 +220,52 @@
                         }
                     }
                 ],
+                "loadBalancingRules": [
+                    {
+                        "name": "SXDEMODEPLOYInnerruleone",
+                        "etag": "W/\"6b3244dc-8f3b-4586-a453-d059907f0f2b\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "frontendIPConfiguration": {
+                                "id": "[parameters('loadBalancers_SXDEMODEPLOYMENTInnerLB_id')]"
+                            },
+                            "frontendPort": 80,
+                            "backendPort": 80,
+                            "enableFloatingIP": false,
+                            "idleTimeoutInMinutes": 4,
+                            "protocol": "Tcp",
+                            "loadDistribution": "Default",
+                            "backendAddressPool": {
+                                "id": "[parameters('loadBalancers_SXDEMODEPLOYMENTInnerLB_id_1')]"
+                            },
+                            "probe": {
+                                "id": "[parameters('loadBalancers_SXDEMODEPLOYMENTInnerLB_id_2')]"
+                            }
+                        }
+                    },
+                    {
+                        "name": "SXDEMODEPLOYInnerruletwo",
+                        "etag": "W/\"6b3244dc-8f3b-4586-a453-d059907f0f2b\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "frontendIPConfiguration": {
+                                "id": "[parameters('loadBalancers_SXDEMODEPLOYMENTInnerLB_id_3')]"
+                            },
+                            "frontendPort": 8080,
+                            "backendPort": 8080,
+                            "enableFloatingIP": false,
+                            "idleTimeoutInMinutes": 4,
+                            "protocol": "Tcp",
+                            "loadDistribution": "Default",
+                            "backendAddressPool": {
+                                "id": "[parameters('loadBalancers_SXDEMODEPLOYMENTInnerLB_id_4')]"
+                            },
+                            "probe": {
+                                "id": "[parameters('loadBalancers_SXDEMODEPLOYMENTInnerLB_id_5')]"
+                            }
+                        }
+                    }
+                ],
                 "probes": [
                     {
                         "name": "SXDEMODEPLOYHPone",
@@ -273,6 +319,52 @@
                         "etag": "W/\"fee19835-e1c6-4eef-9071-29276a08c3ce\"",
                         "properties": {
                             "provisioningState": "Succeeded"
+                        }
+                    }
+                ],
+                "loadBalancingRules": [
+                    {
+                        "name": "SXDEMODEPLOYMENTOuterruleone",
+                        "etag": "W/\"fee19835-e1c6-4eef-9071-29276a08c3ce\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "frontendIPConfiguration": {
+                                "id": "[parameters('loadBalancers_SXDEMODEPLOYMENTOuterLB_id')]"
+                            },
+                            "frontendPort": 80,
+                            "backendPort": 80,
+                            "enableFloatingIP": false,
+                            "idleTimeoutInMinutes": 4,
+                            "protocol": "Tcp",
+                            "loadDistribution": "Default",
+                            "backendAddressPool": {
+                                "id": "[parameters('loadBalancers_SXDEMODEPLOYMENTOuterLB_id_1')]"
+                            },
+                            "probe": {
+                                "id": "[parameters('loadBalancers_SXDEMODEPLOYMENTOuterLB_id_2')]"
+                            }
+                        }
+                    },
+                    {
+                        "name": "SXDEMODEPLOYMENTOuterruletwo",
+                        "etag": "W/\"fee19835-e1c6-4eef-9071-29276a08c3ce\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "frontendIPConfiguration": {
+                                "id": "[parameters('loadBalancers_SXDEMODEPLOYMENTOuterLB_id_3')]"
+                            },
+                            "frontendPort": 8080,
+                            "backendPort": 8080,
+                            "enableFloatingIP": false,
+                            "idleTimeoutInMinutes": 4,
+                            "protocol": "Tcp",
+                            "loadDistribution": "Default",
+                            "backendAddressPool": {
+                                "id": "[parameters('loadBalancers_SXDEMODEPLOYMENTOuterLB_id_4')]"
+                            },
+                            "probe": {
+                                "id": "[parameters('loadBalancers_SXDEMODEPLOYMENTOuterLB_id_5')]"
+                            }
                         }
                     }
                 ],
