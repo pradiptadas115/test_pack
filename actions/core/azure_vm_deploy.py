@@ -30,7 +30,7 @@ class arm_template_provision(Action):
             subscription_number
         )
         
-        self.resource_group_client.resource_groups.create_or_update(resource_group, resource_group_params)
+        # self.resource_group_client.resource_groups.create_or_update(resource_group, resource_group_params)
         
     def get_template_path(self, existing_template_path):
         file_path = os.path.dirname(os.path.realpath(__file__+"/../"))
@@ -42,7 +42,7 @@ class arm_template_provision(Action):
 
             with open(template_path) as f:
                 template = json.load(f)
-                
+
             print(template,type(template))
             # parameters  = template['parameters']
             # format_parameters = {k: {'value': v} for k, v in parameters.items()}    
@@ -56,7 +56,7 @@ class arm_template_provision(Action):
             # deployment_async_operation = self.resource_group_client.deployments.create_or_update(self.resource_group,self.vm_name,deployment_properties)
             # result = deployment_async_operation.status()
             # deployment_async_operation.wait()
-            return(True,result)
+            # return(True,result)
 
         except Exception as e:
             return(False,str(e)) 
