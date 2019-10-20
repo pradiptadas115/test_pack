@@ -45,9 +45,9 @@ class arm_template_provision(Action):
 
             # print(template,type(template))
             parameters  = template['parameters']
-            print(parameters,type(parameters))
-            # format_parameters = {k: {'value': v} for k, v in parameters.items()}    
             
+            format_parameters = {k: {'value': v} for k, v in parameters.items()}    
+            print(format_parameters,type(format_parameters))
             # deployment_properties = {
             #     'mode': DeploymentMode.incremental,
             #     'template': template,
