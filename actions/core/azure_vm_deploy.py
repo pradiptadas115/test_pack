@@ -44,20 +44,20 @@ class arm_template_provision(Action):
                 template = json.load(f)
 
             # print(template,type(template))
-            # parameters  = template['parameters']
-            parameters = {'vmName': self.vm_name, 'ubuntuOSVersion': '16.04.0-LTS', 'location': self.location, 'adminUsername':'admin','adminPasswordOrKey':'C1sc0@123','vmSize':'Basic_A0','authenticationType':'password'}
-            format_parameters = {k: {'value': v} for k, v in parameters.items()}    
+            parameters  = template['parameters']
+            print(parameters,type(parameters))
+            # format_parameters = {k: {'value': v} for k, v in parameters.items()}    
             
-            deployment_properties = {
-                'mode': DeploymentMode.incremental,
-                'template': template,
-                'parameters': format_parameters
-            }
+            # deployment_properties = {
+            #     'mode': DeploymentMode.incremental,
+            #     'template': template,
+            #     'parameters': format_parameters
+            # }
 
-            deployment_async_operation = self.resource_group_client.deployments.create_or_update(self.resource_group,self.vm_name,deployment_properties)
-            result = deployment_async_operation.status()
-            deployment_async_operation.wait()
-            return(True,result)
+            # deployment_async_operation = self.resource_group_client.deployments.create_or_update(self.resource_group,self.vm_name,deployment_properties)
+            # result = deployment_async_operation.status()
+            # deployment_async_operation.wait()
+            # return(True,result)
 
         except Exception as e:
             return(False,str(e)) 
