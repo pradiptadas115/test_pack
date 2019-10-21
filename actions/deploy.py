@@ -1,10 +1,7 @@
-from core import azure_vm_deploy
+from st2common.runners.base_action import Action
 
-__all__ = [
-    'deploy_arm_template'
-]
-class deploy_arm_template(azure_vm_deploy.arm_template_provision):
+class Test(Action):
 
-    def run(self, client_id,resource_group, subscription_number, tanent_id, serect, region, template_file):
-        self.auth(client_id,resource_group, subscription_number, tanent_id, serect, region)
-        return self.deploy_vm(template_file)
+    def run(self,args):
+        response = "Welcome {}, to stackstorm".format(args)
+        return (True,response)

@@ -6,40 +6,9 @@ description: deploy azure VM
 enabled: true
 entry_point: deploy.py
 parameters:
-    client_id:
+    args:
         type: string
-        description: Client ID
+        description: Your name
         required: true
         position: 1
-    resource_group:
-        type: string
-        description: resource group name 
-        required: true
-        position: 2
-    subscription_number:
-        type: string
-        description: subscription number 
-        required: true
-        position: 3
-    tanent_id:
-        type: string
-        description: tananent ID  
-        required: true
-        position: 4
-    serect:
-        type: string
-        description: secrect 
-        required: true
-        position: 5
-    region:
-        type: string
-        description: region 
-        required: true
-        position: 6
-    template_file:
-        type: string
-        description: template path file 
-        required: false
-        position: 7
-        default: "SXDEMODEPLOYMENT_Demo 2.json"
     
