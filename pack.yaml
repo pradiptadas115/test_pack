@@ -1,5 +1,5 @@
 ---
-name: DD Azure VM provision
+name: DD-Azure-VM-provision
 description: this is a testing pack
 keywords:
   - azure
