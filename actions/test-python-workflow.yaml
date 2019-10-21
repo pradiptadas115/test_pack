@@ -1,6 +1,5 @@
 ---
 name: test-python-workflow
-pack: dd_shieldx_azure_vm_provision
 description: Run a local python script
 runner_type: orquesta
 entry_point: workflows/test-python-workflow.yaml
