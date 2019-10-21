@@ -1,5 +1,5 @@
 ---
-ref: dd_shieldx_azure_vm_provision
+ref: dd_test
 name: DD Azure VM provision
 description: this is a testing pack
 keywords:
