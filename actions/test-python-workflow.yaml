@@ -1,5 +1,6 @@
 ---
 name: test-python-workflow
+pack: testpack
 description: Run a local python script
 runner_type: orquesta
 entry_point: workflows/test-python-workflow.yaml

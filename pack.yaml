@@ -1,5 +1,6 @@
 ---
-name: DD-Azure-VM-provision
+name: pack-test
+ref: testpack
 description: this is a testing pack
 keywords:
   - azure
