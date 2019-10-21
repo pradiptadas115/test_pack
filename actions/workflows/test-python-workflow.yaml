@@ -4,7 +4,7 @@ input:
   - args
 tasks:
   task1:
-    action: dd_shieldx_azure_vm_provision.deploy
+    action: dd_shieldx_azure_vm.deploy
     next:
       - when: <% succeeded() %>
         publish:
