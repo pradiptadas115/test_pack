@@ -3,7 +3,7 @@ name: test-python-workflow
 pack: test_pack
 description: Run a local python script
 runner_type: orquesta
-entry_point: workflows/test-python-workflow.yaml
+entry_point: workflows/orquesta-basic.yaml
 enabled: true
 parameters:
   args:
