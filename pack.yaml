@@ -1,6 +1,6 @@
 ---
-ref: dd_shieldx_azure_vm_provision
-name: DD Azure VM provision
+ref: test-pack
+name: test-pack
 description: this is a testing pack
 keywords:
   - azure
@@ -9,6 +9,6 @@ keywords:
 version: 0.1.0
 python_version: 
   - "2"
-author: Kolkata StackStorm Team
+author: Me
 email: pradipta.das@nihilent.com
 
