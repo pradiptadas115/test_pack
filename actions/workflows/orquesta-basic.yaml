@@ -2,9 +2,17 @@ version: 1.0
 
 description: A basic workflow that runs an arbitrary linux command.
 
+input:
+  - cmd
+  - timeout
+  
 tasks:
   task1:
-    action: test_pack.testpython 
+    action: core.local cmd=<% ctx(cmd) %> timeout=<% ctx(timeout) %>
+    next:
+      - do: task2
+  task2:
+    action: test_pack.testpython
     next:
       - when: <% succeeded() %>
         publish:
