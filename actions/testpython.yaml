@@ -1,0 +1,7 @@
+---
+name: testpython
+pack: test_pack
+runner_type: "python-script"
+description: test python file 
+enabled: true
+entry_point: testpython.py
