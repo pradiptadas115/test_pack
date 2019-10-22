@@ -4,4 +4,4 @@ class python_deploy(Action):
     
     def run(self,param):
         print("this is workflow test python file")
-        print(param)
+        print(str(param))
