@@ -1,6 +1,6 @@
 ---
 ref: test-pack
-name: test-pack
+name: Test Pack
 description: this is a testing pack
 keywords:
   - azure
