@@ -5,3 +5,9 @@ runner_type: "python-script"
 description: test python file 
 enabled: true
 entry_point: testpython.py
+parameters:
+    param:
+        type: string
+        description: testing parameters
+        required: true
+        position: 1
