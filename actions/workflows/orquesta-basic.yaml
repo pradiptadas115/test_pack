@@ -12,7 +12,7 @@ tasks:
     next:
       - do: task2
   task2:
-    action: test_pack.testpython
+    action: test_pack.testpython param=<% task(task1) %>
     next:
       - when: <% succeeded() %>
         publish:
