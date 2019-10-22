@@ -6,7 +6,10 @@ runner_type: orquesta
 entry_point: workflows/orquesta-basic.yaml
 enabled: true
 parameters:
-  args:
+  cmd:
     required: true
     type: string
-    default: "pradipta"
+  timeout:
+    required: true
+    type: string
+    default: 60
